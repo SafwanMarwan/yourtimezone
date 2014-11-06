@@ -1,4 +1,11 @@
 Workspace::Application.routes.draw do
+  resources :users
+  
+  get 'sign_up' => 'users#new'
+  get 'sign_in' => 'sessions#new'
+  post 'sign_in' => 'sessions#create'
+  delete 'sign_out' => 'sessions#destroy', as: :sign_out
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

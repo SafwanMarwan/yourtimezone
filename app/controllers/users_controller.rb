@@ -24,6 +24,10 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
+    
+    if @user.yourtimes.count == 0
+      @user.yourtimes.build
+    end
   end
 
   def update
@@ -47,6 +51,6 @@ class UsersController < ApplicationController
   end
   
   def user_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation, yourtimes_attributes: [:id, :place, :_destroy])
   end
 end

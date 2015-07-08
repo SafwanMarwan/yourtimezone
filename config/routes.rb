@@ -1,4 +1,7 @@
 Workspace::Application.routes.draw do
+  get "home" => 'statis_pages#home'
+  get "about" => 'statis_pages#about'
+  get "contact" => 'statis_pages#contact'
   resources :users
   
   get 'sign_up' => 'users#new'

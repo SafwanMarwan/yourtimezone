@@ -3,9 +3,7 @@
 <ul>
     <% @users.each do |user| %>
     <li>
-        <span><%= link_to user.name, edit_user_path(id: user.id) %></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        <span><%= link_to 'Delete', user_path(id: user.id), method: :delete , confirm: "Are you sure?"%></span>
-        
+        <span><%= link_to user.name, user_path(id: user.id) %></span>
     </li>
     <% end %>
 </ul>
